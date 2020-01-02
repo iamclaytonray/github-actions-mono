@@ -1,9 +1,6 @@
 name: Node CI
 
-on:
-  push:
-    paths:
-      - "server/**"
+on: [push]
 
 jobs:
   build:
