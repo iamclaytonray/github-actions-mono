@@ -13,17 +13,22 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: cd into server
+        working-directory: "server"
         run: cd ./server
       - name: pwd
+        working-directory: "server"
         run: pwd
       - name: Use Node.js ${{ matrix.node-version }}
+        working-directory: "server"
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
+        working-directory: "server"
         run: |
           npm install
       - name: npm install, build, and test
+        working-directory: "server"
         run: |
           npm ci
           npm run build --if-present
